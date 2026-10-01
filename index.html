@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- For local testing against another Collibra origin, set content to that origin (e.g. https://host:5404). -->
+  <meta name="collibra-base-url" content="">
+  <meta name="color-scheme" content="light dark">
+  <title>Operating Model Explorer</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#viz">Skip to visualization</a>
+  <div class="app" id="app">
+    <header class="app-header">
+      <button class="icon-btn only-narrow" id="btn-left" aria-label="Show asset type tree" aria-controls="pane-left" aria-expanded="false">☰</button>
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◎</span>
+        <span class="brand-name">Operating Model Explorer</span>
+        <span class="brand-host" id="host"></span>
+      </div>
+      <nav class="header-crumbs" id="header-crumbs" aria-label="Asset type path"></nav>
+      <div class="header-actions">
+        <button class="btn btn-small" id="btn-details" hidden aria-controls="pane-right">Details</button>
+        <details class="dropdown" id="export-menu">
+          <summary class="btn btn-small">Export ▾</summary>
+          <div class="dropdown-menu" role="menu">
+            <button role="menuitem" class="menu-item" data-export="png">PNG image</button>
+            <button role="menuitem" class="menu-item" data-export="pdf">PDF document</button>
+            <button role="menuitem" class="menu-item" data-export="svg">SVG vector</button>
+            <button role="menuitem" class="menu-item" data-export="json">JSON data</button>
+          </div>
+        </details>
+        <button class="btn btn-small" id="btn-print">Print</button>
+        <button class="btn btn-small" id="btn-refresh" title="Clear cached operating model and reload">Refresh</button>
+        <button class="icon-btn" id="btn-theme" aria-label="Theme: automatic" title="Theme: automatic">◐</button>
+        <div class="user" id="user" aria-label="Signed-in user"></div>
+      </div>
+      <div class="progress" id="progress" hidden><div class="progress-bar" id="progress-bar"></div></div>
+    </header>
+    <main class="panes" id="panes">
+      <aside class="pane pane-left" id="pane-left" aria-label="Asset types">
+        <div class="pane-left-inner" id="tree-host"></div>
+        <button class="rail-toggle only-medium" id="btn-rail" aria-label="Collapse tree" title="Collapse tree">⟨</button>
+      </aside>
+      <div class="resize resize-left" id="resize-left" role="separator" aria-orientation="vertical" aria-label="Resize tree pane" tabindex="0"></div>
+      <section class="pane pane-center" aria-label="Visualization">
+        <div class="viz" id="viz" tabindex="-1"></div>
+      </section>
+      <div class="resize resize-right" id="resize-right" role="separator" aria-orientation="vertical" aria-label="Resize details pane" tabindex="0"></div>
+      <aside class="pane pane-right" id="pane-right" aria-label="Details">
+        <div class="sheet-handle only-narrow" id="sheet-handle" role="button" tabindex="0" aria-label="Expand details"></div>
+        <div class="pane-right-tools">
+          <button class="icon-btn only-medium" id="btn-pin" aria-pressed="false" aria-label="Pin details pane" title="Pin details pane">📌</button>
+          <button class="icon-btn only-drawer" id="btn-close-right" aria-label="Close details">×</button>
+        </div>
+        <div class="details" id="details"></div>
+      </aside>
+      <div class="scrim" id="scrim" hidden></div>
+    </main>
+  </div>
+  <div class="fullpage" id="fullpage" hidden></div>
+  <noscript><p class="fullpage">This app requires JavaScript.</p></noscript>
+</body>
+</html>

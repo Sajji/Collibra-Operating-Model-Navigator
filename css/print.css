@@ -1,0 +1,30 @@
+@page { size: landscape; margin: 12mm; }
+
+html, body, .app { height: auto !important; background: #fff !important; color: #000; }
+.app { display: block; }
+.header-actions, .brand-host, #btn-left, .pane-left, .resize, .scrim, .viz-toolbar, .viz-legend, .viz-tooltip,
+.pane-right-tools, .sheet-handle, .search-host, .toasts, .skip-link, .details-footer, .row-actions, .progress { display: none !important; }
+.app-header { border-bottom: 1px solid #999; min-height: 0; padding: 0 0 6px; }
+.header-crumbs { display: flex !important; }
+.header-crumbs::after { content: "  ·  printed " attr(data-printed); color: #555; font-size: 11px; white-space: nowrap; }
+
+.panes { display: block; }
+.pane-center { height: 160mm; break-after: page; page-break-after: always; background: #fff; }
+.viz { height: 100%; }
+.viz-bg { fill: #fff; }
+
+.pane-right {
+  position: static !important;
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+.details, .details-body { overflow: visible !important; height: auto !important; }
+.card { break-inside: avoid; }
+.card > summary::before { content: none; }
+.search-host, .card[data-section="search"] { display: none !important; }
+.type-badge, .avatar, .chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: #000; text-decoration: none; }
