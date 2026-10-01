@@ -1,6 +1,6 @@
 # Operating Model Explorer
 
-A dependency-free (HTML + CSS + vanilla ES modules) web app for exploring the Collibra operating model: asset type hierarchy, assigned attributes, relation types, complex relations and the assets themselves. Built from [`../MCP/operating-model-explorer-spec.md`](../MCP/operating-model-explorer-spec.md).
+A dependency-free (HTML + CSS + vanilla ES modules) web app for exploring the Collibra operating model: asset type hierarchy, assigned attributes, relation types, complex relations and the assets themselves.
 
 ## Deployment
 
